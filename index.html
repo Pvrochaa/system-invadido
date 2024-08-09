@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Você esta sendo Hackeado</title>
+    <style>
+        body {
+            background-color: #000000;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            padding: 20px;
+            color: #ffffff;
+        }
+
+        h1 {
+            color: #09e723;
+        }
+
+        .heart {
+            font-size: 30px;
+            color: rgb(25, 246, 14);
+            cursor: pointer;
+        }
+
+        #nao {
+            font-size: 30px;
+            color: #dc1512;
+            background-color: #000000;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+        }
+
+        .frase {
+            color: red;
+            font-size: 35px;
+        }
+
+        .contagem {
+            color: #09e723;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="./assets/technology-hacker-hacking-virus-wallpaper-preview.jpg">
+        <h1>Você está sendo Hackeado</h1>
+        <p class="frase">Seu sistema foi invadido depois de acessar um link desconhecido</p>
+        <p class="frase">SEUS DADOS SERÃO COLETADOS.</p>
+        <p class="contagem">VOCÊ TEM 10 SEGUNDOS PRA CANCELAR ESSE LINK, CASO FECHE ESSA ABA DO GOOGLE SEUS DADOS SERÃO
+            COLETADOS</p>
+        <p class="img"><img src="./assets/image-removebg-preview.png"></p>
+
+        <p class="heart" onclick="mostrarResposta()">IGNORAR</p>
+        <button id="nao" onmouseover="mudarPosicao()">CANCELAR</button>
+        <p id="resposta" style="display: none;"></p>
+    </div>
+    <script>
+        function mostrarResposta() {
+            document.getElementById('resposta').style.display = 'block';
+            document.getElementById('resposta').innerHTML = 'SIM, EU ACEITO';
+        }
+
+        function mudarPosicao() {
+            const buttonNao = document.getElementById('nao');
+            const randomX = Math.floor(Math.random() * window.innerWidth);
+            const randomY = Math.floor(Math.random() * window.innerHeight);
+            buttonNao.style.left = `${randomX}px`;
+            buttonNao.style.top = `${randomY}px`;
+        }
+    </script>
+</body>
+
+</html>
